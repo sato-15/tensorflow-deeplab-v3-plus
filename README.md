@@ -12,7 +12,7 @@ TensorFlow for semantic image segmentation on the
 
 ## Setup
 ### Requirements:
-- tensorflow >=1.6
+- tensorflow >=1.13,<2.0  # v1.13 or later can be downloaded 
 - numpy
 - matplotlib
 - pillow
@@ -68,6 +68,15 @@ python create_pascal_tf_record.py --data_dir DATA_DIR \
                                   --image_data_dir IMAGE_DATA_DIR \
                                   --label_data_dir LABEL_DATA_DIR 
 ```
+
+If you use own data, set values as following.
+
+* `data_dir` : The path of parent directory of images and labels like VOCdevkit/VOC2012 .
+* `image_data_dir` : The path of directory for images.
+* `label_data_dir` : The path of directory for labels (annotated images).
+
+For details, please see the source code.
+
 
 ## Training
 For training, you need to download and extract [pre-trained Resnet v2 101 model](http://download.tensorflow.org/models/resnet_v2_101_2017_04_14.tar.gz) from [slim](https://github.com/tensorflow/models/tree/master/research/slim) specifying the location with `--pre_trained_model`. You also need to convert original data to the TensorFlow TFRecord format. Once you have followed all the steps in dataset preparation and created TFrecord for training and validation data, you can start training model as follow:
