@@ -1,5 +1,6 @@
 numpy
-tensorflow-gpu==1.12.0
+# TensorFlow v1.12 or before can not be downloaded with PyPI
+tensorflow-gpu<=1.13.2
 matplotlib
 opencv-python
 pillow
